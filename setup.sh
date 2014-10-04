@@ -154,5 +154,10 @@ for i in ${MY_GIT_REPOS[@]}; do
 done
 
 notice "setup dot files"
-$MY_PROJ_DIR/dot-files/setup.sh
+pushd $MY_PROJ_DIR/dot-files
+git submodule init
+git submodule update
+./setup.sh
+vim -c "NeoBundleInstall"
+popd
 
