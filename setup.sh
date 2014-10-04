@@ -152,3 +152,7 @@ cd $MY_PROJ_DIR
 for i in ${MY_GIT_REPOS[@]}; do
         git_clone $i
 done
+
+notice "setup dot files"
+$MY_PROJ_DIR/dot-files/setup.sh
+
