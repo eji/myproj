@@ -26,7 +26,6 @@ BREW_CASK_PKGS=(
   firefox
   google-chrome
   google-japanese-ime
-  haskell-platform
   hyperswitch
   inkscape
   iterm2
