@@ -142,7 +142,7 @@ curl https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.sh | bash
 
 # Python
 sudo easy_install pip
-
+sudo pip install mercurial
 
 if [ ! -d "$MY_PROJ_DIR" ]; then
         notice "create projects dirs:"
