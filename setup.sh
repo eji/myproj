@@ -16,6 +16,7 @@ BREW_PKGS=(
   vim
   wget
   zsh
+  gauche
 )
 
 BREW_CASK_PKGS=(
