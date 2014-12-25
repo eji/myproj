@@ -17,6 +17,7 @@ BREW_PKGS=(
   wget
   zsh
   gauche
+  rlwrap
 )
 
 BREW_CASK_PKGS=(
