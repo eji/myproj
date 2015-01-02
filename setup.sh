@@ -42,6 +42,7 @@ BREW_CASK_PKGS=(
   xquartz
   yorufukurou
   rubymine
+  gimp
 )
 
 MY_PROJ_DIR=$HOME/myproj
