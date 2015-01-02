@@ -41,6 +41,7 @@ BREW_CASK_PKGS=(
   virtualbox
   xquartz
   yorufukurou
+  rubymine
 )
 
 MY_PROJ_DIR=$HOME/myproj
