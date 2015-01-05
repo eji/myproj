@@ -18,6 +18,7 @@ BREW_PKGS=(
   zsh
   gauche
   rlwrap
+  qt
 )
 
 BREW_CASK_PKGS=(
