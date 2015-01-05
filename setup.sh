@@ -135,15 +135,6 @@ brew cask alfred link || true
 brew cleanup
 brew cask cleanup
 
-# Groovy
-## GVM
-curl -s get.gvmtool.net | bash
-
-
-# Node
-## NVM
-curl https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.sh | bash
-
 # Python
 sudo easy_install pip
 sudo pip install mercurial
