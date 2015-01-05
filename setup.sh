@@ -52,6 +52,7 @@ MY_GIT_REPOS=(
   "git@github.com:eji/tableau-study-session.git"
   "git@github.com:eji/mix-kenall-geocode.git"
   "git@github.com:eji/study-of-data-analysis.git"
+  "git@bitbucket.org:eji/work-env.git"
 )
 
 W_COLOR=$'\e[0;31m'
@@ -156,5 +157,11 @@ git submodule init
 git submodule update
 ./setup.sh
 vim -c "NeoBundleInstall"
+popd
+
+notice "setup my work env"
+pushd $MY_PROJ_DIR/work-env
+git pull
+./setup.sh
 popd
 
