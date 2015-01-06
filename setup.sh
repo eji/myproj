@@ -46,6 +46,7 @@ BREW_CASK_PKGS=(
   rubymine
   gimp
   flush-player
+  libreoffice
 )
 
 MY_PROJ_DIR=$HOME/myproj
