@@ -19,6 +19,7 @@ BREW_PKGS=(
   gauche
   rlwrap
   qt
+  v8
 )
 
 BREW_CASK_PKGS=(
@@ -44,6 +45,7 @@ BREW_CASK_PKGS=(
   yorufukurou
   rubymine
   gimp
+  flush-player
 )
 
 MY_PROJ_DIR=$HOME/myproj
