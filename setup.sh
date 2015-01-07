@@ -20,6 +20,7 @@ BREW_PKGS=(
   rlwrap
   qt
   v8
+  redis
 )
 
 BREW_CASK_PKGS=(
