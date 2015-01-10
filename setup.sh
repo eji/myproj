@@ -21,6 +21,8 @@ BREW_PKGS=(
   qt
   v8
   redis
+  pigz
+  netcat
 )
 
 BREW_CASK_PKGS=(
