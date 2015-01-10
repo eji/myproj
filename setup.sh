@@ -23,6 +23,7 @@ BREW_PKGS=(
   redis
   pigz
   netcat
+  rust
 )
 
 BREW_CASK_PKGS=(
