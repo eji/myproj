@@ -24,6 +24,7 @@ BREW_PKGS=(
   pigz
   netcat
   rust
+  opencv
 )
 
 BREW_CASK_PKGS=(
@@ -130,6 +131,7 @@ brew upgrade
 brew tap caskroom/cask || true
 brew tap homebrew/binary || true
 brew tap homebrew/versions || true
+brew tap homebrew/science || true
 
 for i in ${BREW_PKGS[@]}; do
         install_brew $i
