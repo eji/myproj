@@ -25,6 +25,7 @@ BREW_PKGS=(
   netcat
   rust
   opencv
+  gnuplot
 )
 
 BREW_CASK_PKGS=(
