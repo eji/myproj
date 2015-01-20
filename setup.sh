@@ -26,6 +26,7 @@ BREW_PKGS=(
   rust
   opencv
   gnuplot
+  spark
 )
 
 BREW_CASK_PKGS=(
