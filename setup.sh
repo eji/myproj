@@ -27,6 +27,7 @@ BREW_PKGS=(
   opencv
   gnuplot
   spark
+  plotutils
 )
 
 BREW_CASK_PKGS=(
