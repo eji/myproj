@@ -28,6 +28,7 @@ BREW_PKGS=(
   gnuplot
   spark
   plotutils
+  openssl
 )
 
 BREW_CASK_PKGS=(
@@ -51,7 +52,6 @@ BREW_CASK_PKGS=(
   virtualbox
   xquartz
   yorufukurou
-  rubymine
   gimp
   flush-player
   libreoffice
