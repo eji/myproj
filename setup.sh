@@ -29,6 +29,8 @@ BREW_PKGS=(
   spark
   plotutils
   openssl
+  docker
+  boot2docker
 )
 
 BREW_CASK_PKGS=(
