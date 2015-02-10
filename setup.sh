@@ -57,6 +57,7 @@ BREW_CASK_PKGS=(
   gimp
   flush-player
   libreoffice
+  osxfuse
 )
 
 MY_PROJ_DIR=$HOME/myproj
