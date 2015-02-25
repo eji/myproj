@@ -31,6 +31,7 @@ BREW_PKGS=(
   openssl
   docker
   boot2docker
+  ngrok
 )
 
 BREW_CASK_PKGS=(
