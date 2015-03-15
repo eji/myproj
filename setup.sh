@@ -32,6 +32,7 @@ BREW_PKGS=(
   docker
   boot2docker
   ngrok
+  terminal-notifier
 )
 
 BREW_CASK_PKGS=(
@@ -58,6 +59,7 @@ BREW_CASK_PKGS=(
   gimp
   flush-player
   libreoffice
+  kitematic
 )
 
 MY_PROJ_DIR=$HOME/myproj
