@@ -33,6 +33,7 @@ BREW_PKGS=(
   boot2docker
   ngrok
   terminal-notifier
+  awscli
 )
 
 BREW_CASK_PKGS=(
