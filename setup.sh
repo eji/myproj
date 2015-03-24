@@ -34,6 +34,7 @@ BREW_PKGS=(
   ngrok
   terminal-notifier
   awscli
+  socat
 )
 
 BREW_CASK_PKGS=(
