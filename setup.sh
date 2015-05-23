@@ -36,6 +36,7 @@ BREW_PKGS=(
   awscli
   socat
   jq
+  fpp
 )
 
 BREW_CASK_PKGS=(
