@@ -35,6 +35,7 @@ BREW_PKGS=(
   terminal-notifier
   awscli
   socat
+  jq
 )
 
 BREW_CASK_PKGS=(
