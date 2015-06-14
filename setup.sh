@@ -37,6 +37,8 @@ BREW_PKGS=(
   socat
   jq
   fpp
+  nkf
+  hugo
 )
 
 BREW_CASK_PKGS=(
