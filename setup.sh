@@ -39,6 +39,7 @@ BREW_PKGS=(
   fpp
   nkf
   hugo
+  tree
 )
 
 BREW_CASK_PKGS=(
