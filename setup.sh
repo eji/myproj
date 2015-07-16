@@ -67,6 +67,7 @@ BREW_CASK_PKGS=(
   flush-player
   libreoffice
   kitematic
+  mysqlworkbench
 )
 
 MY_PROJ_DIR=$HOME/myproj
