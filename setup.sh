@@ -68,6 +68,7 @@ BREW_CASK_PKGS=(
   libreoffice
   kitematic
   mysqlworkbench
+  the-unarchiver
 )
 
 MY_PROJ_DIR=$HOME/myproj
