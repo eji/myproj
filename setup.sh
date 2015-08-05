@@ -40,6 +40,7 @@ BREW_PKGS=(
   nkf
   hugo
   tree
+  pup
 )
 
 BREW_CASK_PKGS=(
