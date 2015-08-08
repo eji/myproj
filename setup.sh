@@ -70,6 +70,7 @@ BREW_CASK_PKGS=(
   kitematic
   mysqlworkbench
   the-unarchiver
+  brackets
 )
 
 MY_PROJ_DIR=$HOME/myproj
