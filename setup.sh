@@ -41,6 +41,7 @@ BREW_PKGS=(
   hugo
   tree
   pup
+  gnu-sed
 )
 
 BREW_CASK_PKGS=(
