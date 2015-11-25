@@ -42,6 +42,7 @@ BREW_PKGS=(
   tree
   pup
   gnu-sed
+  leiningen
 )
 
 BREW_CASK_PKGS=(
@@ -72,6 +73,7 @@ BREW_CASK_PKGS=(
   mysqlworkbench
   the-unarchiver
   brackets
+  limechat
 )
 
 MY_PROJ_DIR=$HOME/myproj
