@@ -74,6 +74,7 @@ BREW_CASK_PKGS=(
   the-unarchiver
   brackets
   limechat
+  otto
 )
 
 MY_PROJ_DIR=$HOME/myproj
