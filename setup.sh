@@ -30,7 +30,9 @@ BREW_PKGS=(
   plotutils
   openssl
   docker
-  boot2docker
+  docker-machine
+  docker-swarm
+  docker-compose
   ngrok
   terminal-notifier
   awscli
