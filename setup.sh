@@ -33,6 +33,7 @@ BREW_PKGS=(
   docker-machine
   docker-swarm
   docker-compose
+  kubernetes-cli
   ngrok
   terminal-notifier
   awscli
