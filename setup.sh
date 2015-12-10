@@ -47,6 +47,7 @@ BREW_PKGS=(
   pup
   gnu-sed
   leiningen
+  rlwrap
 )
 
 BREW_CASK_PKGS=(
