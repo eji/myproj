@@ -47,6 +47,7 @@ BREW_PKGS=(
   pup
   gnu-sed
   leiningen
+  haskell-stack
 )
 
 BREW_CASK_PKGS=(
