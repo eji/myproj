@@ -48,6 +48,7 @@ BREW_PKGS=(
   gnu-sed
   leiningen
   haskell-stack
+  binutils
 )
 
 BREW_CASK_PKGS=(
