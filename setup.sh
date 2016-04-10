@@ -49,6 +49,7 @@ BREW_PKGS=(
   leiningen
   haskell-stack
   binutils
+  freetds
 )
 
 BREW_CASK_PKGS=(
