@@ -50,6 +50,7 @@ BREW_PKGS=(
   haskell-stack
   binutils
   freetds
+  rbenv
 )
 
 BREW_CASK_PKGS=(
