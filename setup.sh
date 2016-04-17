@@ -35,7 +35,7 @@ BREW_PKGS=(
   docker-compose
   amazon-ecs-cli
   kubernetes-cli
-  ngrok
+  ngrok2
   terminal-notifier
   awscli
   socat
