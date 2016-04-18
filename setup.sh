@@ -83,6 +83,7 @@ BREW_CASK_PKGS=(
   brackets
   limechat
   otto
+  parallels-desktop
 )
 
 MY_PROJ_DIR=$HOME/myproj
