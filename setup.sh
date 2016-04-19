@@ -188,3 +188,5 @@ git pull
 ./setup.sh
 popd
 
+
+mkdir -p $HOME/.nvm
