@@ -51,6 +51,7 @@ BREW_PKGS=(
   binutils
   freetds
   rbenv
+  nvm
 )
 
 BREW_CASK_PKGS=(
