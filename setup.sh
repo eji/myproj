@@ -52,6 +52,7 @@ BREW_PKGS=(
   freetds
   rbenv
   nvm
+  direnv
 )
 
 BREW_CASK_PKGS=(
