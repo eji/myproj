@@ -14,6 +14,7 @@ BREW_PKGS=(
   pt
   tmux
   vim
+  neovim/neovim/neovim
   wget
   zsh
   gauche
