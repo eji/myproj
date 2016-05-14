@@ -87,6 +87,7 @@ BREW_CASK_PKGS=(
   limechat
   otto
   parallels-desktop
+  freemind
 )
 
 MY_PROJ_DIR=$HOME/myproj
