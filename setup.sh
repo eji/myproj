@@ -54,6 +54,7 @@ BREW_PKGS=(
   rbenv
   nvm
   direnv
+  sshrc
 )
 
 BREW_CASK_PKGS=(
