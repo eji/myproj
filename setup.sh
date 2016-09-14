@@ -55,6 +55,7 @@ BREW_PKGS=(
   nvm
   direnv
   sshrc
+  swiftlint
 )
 
 BREW_CASK_PKGS=(
