@@ -17,6 +17,7 @@ BREW_PKGS=(
   neovim/neovim/neovim
   wget
   zsh
+  fish
   gauche
   rlwrap
   qt
