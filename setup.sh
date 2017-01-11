@@ -169,6 +169,9 @@ brew cask cleanup
 sudo easy_install pip
 sudo pip install mercurial
 
+# Rust
+curl https://sh.rustup.rs -sSf | sh
+
 if [ ! -d "$MY_PROJ_DIR" ]; then
         notice "create projects dirs:"
         notice "  mkdir $MY_PROJ_DIR"
