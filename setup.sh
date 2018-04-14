@@ -14,6 +14,7 @@ BREW_PKGS=(
   pt
   tmux
   vim
+  newvim
   neovim/neovim/neovim
   wget
   zsh
@@ -57,6 +58,7 @@ BREW_PKGS=(
   direnv
   sshrc
   swiftlint
+  jp
 )
 
 BREW_CASK_PKGS=(
@@ -151,6 +153,7 @@ brew tap caskroom/cask || true
 brew tap homebrew/binary || true
 brew tap homebrew/versions || true
 brew tap homebrew/science || true
+brew tap jmespath/jmespath || true
 
 for i in ${BREW_PKGS[@]}; do
         install_brew $i
