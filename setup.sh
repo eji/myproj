@@ -6,7 +6,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 BREW_PKGS=(
   multitail
-  pt
+  ripgrep
   tmux
   newvim
   wget
