@@ -5,103 +5,32 @@ set -eu
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 BREW_PKGS=(
-  brew-cask
-  emacs
-  git
-  go
-  htop-osx
   multitail
   pt
   tmux
-  vim
   newvim
-  neovim/neovim/neovim
   wget
-  zsh
   fish
-  gauche
-  rlwrap
-  qt
-  v8
-  redis
-  pigz
   netcat
-  rust
-  opencv
-  gnuplot
-  spark
-  plotutils
-  openssl
-  docker
-  docker-machine
-  docker-swarm
-  docker-compose
-  amazon-ecs-cli
-  kubernetes-cli
-  ngrok2
   terminal-notifier
   awscli
   socat
   jq
+  jp
   fpp
-  nkf
-  hugo
   tree
   pup
   gnu-sed
-  leiningen
-  haskell-stack
-  binutils
   freetds
   rbenv
-  nvm
+  ruby-build
   direnv
-  sshrc
-  swiftlint
-  jp
-)
-
-BREW_CASK_PKGS=(
-  alfred
-  android-studio
-  dropbox
-  evernote
-  firefox
-  google-chrome
-  google-japanese-ime
-  hyperswitch
-  inkscape
-  iterm2
-  java
-  kobito
-  skype
-  slack
-  sophos-anti-virus-home-edition
-  sourcetree
-  vagrant
-  virtualbox
-  xquartz
-  yorufukurou
-  gimp
-  flush-player
-  libreoffice
-  kitematic
-  mysqlworkbench
-  the-unarchiver
-  brackets
-  limechat
-  otto
-  parallels-desktop
-  freemind
 )
 
 MY_PROJ_DIR=$HOME/myproj
 
 MY_GIT_REPOS=(
   "git@github.com:eji/dot-files.git"
-  "git@github.com:eji/tableau-study-session.git"
-  "git@github.com:eji/mix-kenall-geocode.git"
-  "git@github.com:eji/study-of-data-analysis.git"
   "git@bitbucket.org:eji/work-env.git"
 )
 
@@ -149,31 +78,12 @@ git_clone()
 brew update
 brew upgrade
 
-brew tap caskroom/cask || true
-brew tap homebrew/binary || true
-brew tap homebrew/versions || true
-brew tap homebrew/science || true
-brew tap jmespath/jmespath || true
-
 for i in ${BREW_PKGS[@]}; do
         install_brew $i
 done
 
-for i in ${BREW_CASK_PKGS[@]}; do
-        install_brew_cask $i
-done
-
-brew cask alfred link || true
-
 brew cleanup
-brew cask cleanup
 
-# Python
-sudo easy_install pip
-sudo pip install mercurial
-
-# Rust
-curl https://sh.rustup.rs -sSf | sh
 
 if [ ! -d "$MY_PROJ_DIR" ]; then
         notice "create projects dirs:"
@@ -191,7 +101,6 @@ pushd $MY_PROJ_DIR/dot-files
 git submodule init
 git submodule update
 ./setup.sh
-vim -c "NeoBundleInstall"
 popd
 
 notice "setup my work env"
@@ -199,6 +108,3 @@ pushd $MY_PROJ_DIR/work-env
 git pull
 ./setup.sh
 popd
-
-
-mkdir -p $HOME/.nvm
