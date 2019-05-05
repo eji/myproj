@@ -2,18 +2,20 @@
 
 set -eu
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+W_COLOR=$'\e[0;31m'
+N_COLOR=$'\e[0m'
 
 BREW_PKGS=(
-  multitail
+  ghq
   ripgrep
+  fzf
   tmux
-  newvim
+  neovim
   wget
   fish
   netcat
-  terminal-notifier
   awscli
+  azure-cli
   socat
   jq
   jp
@@ -21,23 +23,17 @@ BREW_PKGS=(
   tree
   pup
   gnu-sed
-  freetds
   rbenv
   ruby-build
+  nodenv
   direnv
 )
 
-MY_PROJ_DIR=$HOME/myproj
-
-MY_GIT_REPOS=(
-  "git@github.com:eji/dot-files.git"
-  "git@bitbucket.org:eji/work-env.git"
+BREW_PKGS_MACOSX=(
+  terminal-notifier
 )
 
-W_COLOR=$'\e[0;31m'
-N_COLOR=$'\e[0m'
-
-warning()
+warn()
 {
   echo $W_COLOR "WARNING: $@" $N_COLOR >&2
 }
@@ -47,64 +43,66 @@ notice()
   echo $N_COLOR "$@"
 }
 
-install_brew()
+command_exists()
 {
-  brew install $1
+  type -p $1 > /dev/null
 }
 
-install_brew_cask()
+setup_homebrew_and_install_packages()
 {
-  brew cask install $1 || true
-}
-
-deltect_dirname_from_gitrepo()
-{
-  local REPO=$1
-  echo $REPO | sed 's|^.*/\(.*\)\.git$|\1|'
-}
-
-git_clone()
-{
-  local REPO=$1
-  local REPO_DIR=$(deltect_dirname_from_gitrepo $REPO)
-  if [ -d "$REPO_DIR" ]; then
-    warning "$REPO_DIR dir already exist"
+  if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    setup_homebrew_linux
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    setup_homebrew_macosx
+    install_packages_macosx
   else
-    git clone $REPO
+    warn "Unsupported OSTYPE: $OSTYPE"
+    exit 1
+  fi
+
+  install_packages_common
+
+  brew update
+  brew upgrade
+}
+
+setup_homebrew_linux()
+{
+  if ! command_exists brew; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+  fi
+  # 環境変数SHELLによって返す設定値が異なるため、明示的にSHELLを設定している
+  test -d /home/linuxbrew/.linuxbrew && eval $(SHELL=/bin/bash /home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+  apt install build-essential
+}
+
+setup_homebrew_macosx()
+{
+  if ! command_exists brew; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 }
 
-## パッケージのインストール
-brew update
-brew upgrade
+install_packages_common()
+{
+  for i in ${BREW_PKGS[@]}; do
+    brew install $i
+  done
+}
 
-for i in ${BREW_PKGS[@]}; do
-        install_brew $i
-done
+install_packages_macosx()
+{
+  for i in ${BREW_PKGS_MACOSX[@]}; do
+    brew install $i
+  done
+}
 
-brew cleanup
+notice "Setup Homebrew and install packages"
+setup_homebrew_and_install_packages
 
-
-if [ ! -d "$MY_PROJ_DIR" ]; then
-        notice "create projects dirs:"
-        notice "  mkdir $MY_PROJ_DIR"
-        mkdir $MY_PROJ_DIR
-fi
-cd $MY_PROJ_DIR
-
-for i in ${MY_GIT_REPOS[@]}; do
-        git_clone $i
-done
-
-notice "setup dot files"
-pushd $MY_PROJ_DIR/dot-files
-git submodule init
-git submodule update
-./setup.sh
-popd
-
-notice "setup my work env"
-pushd $MY_PROJ_DIR/work-env
-git pull
+notice "Setup dot files"
+ghq get "git@github.com:eji/dot-files.git"
+pushd $(ghq root)/github.com/eji/dot-files
 ./setup.sh
 popd
