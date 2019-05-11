@@ -33,6 +33,10 @@ BREW_PKGS_MACOSX=(
   terminal-notifier
 )
 
+BREW_PKGS_LINUX=(
+  xclip
+)
+
 warn()
 {
   echo $W_COLOR "WARNING: $@" $N_COLOR >&2
@@ -52,6 +56,7 @@ setup_homebrew_and_install_packages()
 {
   if [[ "$OSTYPE" == "linux-gnu" ]]; then
     setup_homebrew_linux
+    install_packages_linux
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     setup_homebrew_macosx
     install_packages_macosx
@@ -74,7 +79,7 @@ setup_homebrew_linux()
   # 環境変数SHELLによって返す設定値が異なるため、明示的にSHELLを設定している
   test -d /home/linuxbrew/.linuxbrew && eval $(SHELL=/bin/bash /home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-  apt install build-essential
+  apt install build-essential lxd lxd-client
 }
 
 setup_homebrew_macosx()
@@ -94,6 +99,13 @@ install_packages_common()
 install_packages_macosx()
 {
   for i in ${BREW_PKGS_MACOSX[@]}; do
+    brew install $i
+  done
+}
+
+install_packages_linux()
+{
+  for i in ${BREW_PKGS_LINUX[@]}; do
     brew install $i
   done
 }
