@@ -13,6 +13,7 @@ BREW_PKGS=(
   neovim
   wget
   fish
+  nushell
   netcat
   awscli
   azure-cli
@@ -33,10 +34,6 @@ BREW_PKGS_MACOSX=(
   terminal-notifier
 )
 
-BREW_PKGS_LINUX=(
-  xclip
-)
-
 warn()
 {
   echo $W_COLOR "WARNING: $@" $N_COLOR >&2
@@ -54,35 +51,15 @@ command_exists()
 
 setup_homebrew_and_install_packages()
 {
-  if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    setup_homebrew_linux
-    install_packages_linux
-  elif [[ "$OSTYPE" == "darwin"* ]]; then
-    setup_homebrew_macosx
-    install_packages_macosx
-  else
-    warn "Unsupported OSTYPE: $OSTYPE"
-    exit 1
-  fi
-
+  setup_homebrew_macos
+  install_packages_macos
   install_packages_common
 
   brew update
   brew upgrade
 }
 
-setup_homebrew_linux()
-{
-  if ! command_exists brew; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-  fi
-  # 環境変数SHELLによって返す設定値が異なるため、明示的にSHELLを設定している
-  test -d /home/linuxbrew/.linuxbrew && eval $(SHELL=/bin/bash /home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-  apt install build-essential lxd lxd-client
-}
-
-setup_homebrew_macosx()
+setup_homebrew_macos()
 {
   if ! command_exists brew; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -96,16 +73,9 @@ install_packages_common()
   done
 }
 
-install_packages_macosx()
+install_packages_macos()
 {
   for i in ${BREW_PKGS_MACOSX[@]}; do
-    brew install $i
-  done
-}
-
-install_packages_linux()
-{
-  for i in ${BREW_PKGS_LINUX[@]}; do
     brew install $i
   done
 }
