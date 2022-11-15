@@ -28,6 +28,7 @@ BREW_PKGS=(
   ruby-build
   nodenv
   direnv
+  bat
 )
 
 BREW_PKGS_MACOSX=(
