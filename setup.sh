@@ -29,6 +29,7 @@ BREW_PKGS=(
   nodenv
   direnv
   bat
+  zellij
 )
 
 BREW_PKGS_MACOSX=(
