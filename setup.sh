@@ -30,6 +30,7 @@ BREW_PKGS=(
   direnv
   bat
   zellij
+  starship
 )
 
 BREW_PKGS_MACOSX=(
