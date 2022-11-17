@@ -9,10 +9,8 @@ BREW_PKGS=(
   ghq
   ripgrep
   fzf
-  tmux
   neovim
   wget
-  fish
   nushell
   netcat
   awscli
